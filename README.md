@@ -1,6 +1,11 @@
-# Client app - MERN
+# Customer Service Manager tool - Client Side 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+
+STACK: Javascript || Typescript || Node Js || Mongo DB || Express || Angular || CSS framework: Bootswatch -> https://bootswatch.com/lux/
+
+See the backend code - https://github.com/MaiBP/customerServiceManager_AngularApp_Backend
+
 
 
 <img width="1440" alt="Screenshot 2022-07-12 at 19 56 59" src="https://user-images.githubusercontent.com/86882630/178573973-f7c13c9d-2072-4ee1-89d4-b88aeff6b9f3.png">
