@@ -1,0 +1,100 @@
+
+<div class='row'>
+    <div  class='col-md-4'>
+        <div class="card">
+            <div class="card-body">
+                <label for="form" class="form-label mt-2">Customer's personal information</label>
+                <form #customerForm='ngForm'(ngSubmit)='addCustomer(customerForm)'>
+                      <!-- getting the id to edit or creating a new customer -->
+                    <input type='hidden' name='_id' [(ngModel)]='customerService.selectedCustomer._id'>
+
+
+                    <div class='form-group mt-2'>
+                        <label for="name" class="form-label mt-4">Name</label>
+                        <input type="text" name='name' class='form-control' placeholder='Name' [(ngModel)]='customerService.selectedCustomer.name'>
+                    </div>
+                    <div class='form-group mt-2'>
+                        <label for="lastName" class="form-label mt-4">Last Name</label>
+                        <input type="text" name='lastName'class='form-control' placeholder='Last Name' [(ngModel)]='customerService.selectedCustomer.lastName'>
+                    </div>
+                    <div class='form-group mt-2'>
+                        <label for="phone" class="form-label mt-4">Phone</label>
+                        <input type="text" name='phoneNumber'class='form-control' placeholder='Phone' [(ngModel)]='customerService.selectedCustomer.phoneNumber'>
+                    </div>
+                    <div class='form-group mt-2'>
+                        <label for="email" class="form-label mt-4">E-mail</label>
+                        <input type="email" name='email' class='form-control' placeholder='E-mail' [(ngModel)]='customerService.selectedCustomer.email'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="inquiryType" class="form-label mt-4">Inquiry Type</label>
+                        <select class="form-select" name='inquiry' id="inquiryType"
+                        [(ngModel)]='customerService.selectedCustomer.inquiry'>
+                                <option>Advice</option>
+                                <option>Claim</option>
+                                <option>Order</option>
+                                <option>Others</option>
+                        </select>
+                       
+                        <!-- <label for="exampleTextarea" class="form-label mt-4">Example textarea</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea> -->
+                        <!-- <input type="email" name='email' class='form-control' placeholder='E-mail'
+                            [(ngModel)]='customerService.selectedCustomer.email'> -->
+                    </div>
+                    <button class="btn btn-primary mt-2">
+                        save
+                    </button>
+                    <button class="btn btn-secondary mr-2" (click)='resetForm(customerForm)'>
+                        clear
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+        <table class="table table-hover" id='allData'>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        NAME
+                    </th>
+                    <th scope="col">
+                        LAST NAME
+                    </th>
+                    <th scope="col">
+                       PHONE
+                    </th>
+                    <th scope="col">
+                        E-MAIL
+                    </th>
+                    <th scope="col">
+                        INQUIRY
+                    </th>
+                </tr>
+            </thead>
+           <!-- Getting all customers from customerService  -->
+            <tbody *ngFor="let customer of customerService.customers">
+                <tr *ngIf='searchText === "" || customer.name.toLowerCase().includes(searchText) || customer.lastName.toLowerCase().includes(searchText)'>
+                 
+                        <td>{{ customer.name.toUpperCase() }}</td>
+                        <td>{{ customer.lastName.toUpperCase() }}</td>
+                        <td>{{ customer.phoneNumber }}</td>
+                        <td>{{ customer.email }}</td>
+                        <td>{{ customer.inquiry}}</td>
+                        <td> 
+               
+                            <button type="button" class="btn btn-outline-dark btn-sm">
+                            
+                                <i class="material-icons left" (click)='editCustomer(customer)'>edit</i></button>
+                            <!-- in customer._id Add ' ! ' so it isn't undefined -->
+                            <button  type="button" class="btn btn-outline-danger btn-sm mt-2"
+                              (click)='deleteCustomer(customer._id!)'>
+                                <i class="material-icons left">delete</i> 
+                            </button>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
