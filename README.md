@@ -1,27 +1,15 @@
-# Client
+# Client app - MERN
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<img width="1440" alt="Screenshot 2022-07-12 at 19 56 59" src="https://user-images.githubusercontent.com/86882630/178573973-f7c13c9d-2072-4ee1-89d4-b88aeff6b9f3.png">
 
-## Code scaffolding
+# Search / Add Customer / Delete / Edit
+<img width="828" alt="Screenshot 2022-07-12 at 21 12 44" src="https://user-images.githubusercontent.com/86882630/178575420-aaa54596-2cfd-4e96-a2be-82c9235728e9.png">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# Download Report
+<img width="605" alt="Screenshot 2022-07-12 at 21 05 59" src="https://user-images.githubusercontent.com/86882630/178574985-f6e98b09-7313-4884-b5c7-a859496efb3a.png">
+<img width="584" alt="Screenshot 2022-07-12 at 21 06 38" src="https://user-images.githubusercontent.com/86882630/178575005-ae54651b-9c0b-416b-bbdb-fbb594abc063.png">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
